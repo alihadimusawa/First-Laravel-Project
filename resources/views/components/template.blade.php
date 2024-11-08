@@ -60,7 +60,7 @@
             color: white;
         }
 
-        #courseImage{
+        #courseImage {
             border-radius: 20px !important;
             overflow: hidden;
             object-fit: contain;
@@ -69,20 +69,21 @@
             height: 620%;
         }
 
-        .courseContainer{
+        .courseContainer {
             padding-left: 50px;
             padding-right: 50px;
         }
 
-        .courseContainer div{
+        .courseContainer div {
             margin-top: 50px;
         }
 
-        #courseImageContainer{
+        #courseImageContainer {
             width: 650px;
             overflow: hidden;
             border-radius: 20px !important;
         }
+
     </style>
 
 </head>
@@ -90,7 +91,7 @@
 <body>
 
     <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom" id="headernih">
-        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <a href="{{ route('home') }}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
             <svg class="bi me-2" width="40" height="32">
                 <use xlink:href="#bootstrap"></use>
             </svg>
@@ -99,34 +100,36 @@
 
         <ul class="nav nav-pills">
             <li class="nav-item">
-                <a href="#" class="nav-link {{ $activePage == 'home' ? 'active' : '' }}" aria-current="page">Home</a>
+                <a href="{{ route('home') }}" class="nav-link {{ $activePage == 'home' ? 'active' : '' }}" aria-current="page">Home</a>
             </li>
 
             <!-- Dropdowns -->
             <li class="nav-item" id="category">
                 <a href="#" class="nav-link {{ $activePage == 'category' ? 'active' : '' }}">Category</a>
                 <ul class="dropdown-menu position-static d-grid gap-1 p-2 rounded-3 mx-0 shadow w-220px" id="dropdown" data-bs-theme="light">
-                    <li><a class="dropdown-item rounded-2" href="#">Interactive Multimedia</a></li>
+                    <li><a class="dropdown-item rounded-2" href="/category/interactive">Interactive Multimedia</a></li>
                     <li>
                         <hr class="dropdown-divider">
                     </li>
-                    <li><a class="dropdown-item rounded-2" href="#">Software Engineering</a></li>
+                    <li><a class="dropdown-item rounded-2" href="/category/software">Software Engineering</a></li>
                 </ul>
             </li>
 
             <li class="nav-item">
-                <a href="#" class="nav-link {{ $activePage == 'writers' ? 'active' : '' }}">Writers</a>
+                <a href="/writers" class="nav-link {{ $activePage == 'writers' ? 'active' : '' }}">Writers</a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link {{ $activePage == 'about' ? 'active' : '' }}">About Us</a>
+                <a href="/about" class="nav-link {{ $activePage == 'about' ? 'active' : '' }}">About Us</a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link {{ $activePage == 'popular' ? 'active' : '' }}">Popular</a>
+                <a href="/popular" class="nav-link {{ $activePage == 'popular' ? 'active' : '' }}">Popular</a>
             </li>
         </ul>
     </header>
 
-    {{ $slot }}
+    <div class="content">
+        {{ $slot }}
+    </div>
 
     <div id="footer">
         © EduFun 2024 | Web Programming | Ali Hadi Musawa | 2602151494

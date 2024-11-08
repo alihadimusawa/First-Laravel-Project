@@ -18,14 +18,14 @@
     
 </style>
     
-    <h1 style="margin-left: 100px !important; margin-top: 100px;">Software Engineering</h1>
+    <h1 style="margin-left: 100px !important; margin-top: 100px;">{{$course->category}}</h1>
 
-    <img src="{{ asset('image/hci2.jpg') }}" style="margin-top: 100px;" id="detailImage">
+    <img src="{{ $course->image }}" style="margin-top: 100px;" id="detailImage">
 
-<p>12/03/2024 - By Bia</p>
+<p>12/03/2024 - By {{$course->writer}}</p>
 
 <!-- add the functionality for the long text here -->
-<p class="lead">Belajar HCI (Human-Computer Interaction) dari 0 sampai Ahli adalah kursus komprehensif yang dirancang untuk membawa Anda memahami dan menguasai prinsip-prinsip interaksi manusia dan komputer dari dasar hingga tingkat lanjutan. Dalam kursus ini, Anda akan mempelajari konsep-konsep HCI, mulai dari desain antarmuka yang ramah pengguna, analisis kebutuhan pengguna, hingga teknik evaluasi pengalaman pengguna. Kursus ini juga mencakup berbagai studi kasus, praktik terbaik, dan keterampilan yang diperlukan untuk merancang produk digital yang intuitif dan efektif.</p>
+<p class="lead">{{$course->description}}</p>
 
 
 </x-template>
