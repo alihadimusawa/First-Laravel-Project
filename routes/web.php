@@ -23,6 +23,4 @@ Route::get("/about", function(){
     return view("aboutUs");
 });
 
-Route::get("/popular", function(){
-    return view("popular");
-});
+Route::get("/popular", [CourseController::class, 'popular'])->name("popular");

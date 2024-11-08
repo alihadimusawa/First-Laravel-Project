@@ -51,4 +51,9 @@ class CourseController extends Controller
         $courses = Course::where("writer", $writer)->get();
         return view('writersCourse', compact('courses'));
     }
+
+    public function popular(){
+        $courses = Course::paginate(3);
+        return view('popular', compact("courses"));
+    }
 }
